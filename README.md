@@ -24,7 +24,7 @@ docker-compose up -d
 **2:build up containers**
 ```
 cd (path-to-'streaming-host-sample')
-cd ./streaming_host/
+cd ./streaming_host
 docker-compose up -d
 ```
 then you will be able to access 'http://localhost/hls/broadcast.m3u8' and watch sample movie.
