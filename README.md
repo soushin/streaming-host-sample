@@ -27,5 +27,5 @@ cd (path-to-'streaming-host-sample')
 cd ./streaming_host
 docker-compose up -d
 ```
-then you will be able to access 'http://localhost/hls/broadcast.m3u8' and watch sample movie.
-If you want to stream live that set up RTMP URL 'rtmp://localhost:1935/encoder'. 
+then you will be able to access `http://localhost/hls/broadcast.m3u8` and watch sample movie.
+If you want to stream live that set up RTMP URL `rtmp://localhost:1935/encoder`. 
