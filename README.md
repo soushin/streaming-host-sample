@@ -1,7 +1,9 @@
 # streaming-host-sample
 
 This project contains sample of video streaming host that building docker-compose.
-RTMP server is built up by [nginx-rtmp-module](https://github.com/arut/nginx-rtmp-module) and using FFmpeg that streaming from Broadcast server to Rtmp server.
+RTMP server is built up by [nginx-rtmp-module](https://github.com/arut/nginx-rtmp-module).
+Broadcast server sends video stream to RTMP server by using FFmpeg.
+Streaming sever sends video by HLS(HTTP Live Streaming).
 
 ## Overview of containers
 
