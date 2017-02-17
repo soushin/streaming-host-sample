@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  rtmp:
+    container_name: rtmp_server
+    build: ./container/nginx_rtmp
+    ports:
+      - 1935:1935
+    volumes:
+      - /var/container/data:/data
+      - /var/container/log/rtmp/nginx/:/var/log/nginx
+
+  stream:
+    container_name: stream_server
+    build: ./container/nginx_stream
+    ports:
+      - 80:80
+    volumes:
+      - /var/container/data:/data
+      - /var/container/log/stream/nginx/:/var/log/nginx
+
+  broadcast:
+    container_name: broadcast_server
+    build: ./container/ffmpeg_broadcast
+    depends_on:
+      - rtmp
+    environment:
+      RTMP_SERVER_URL: "rtmp://rtmp:1935/encoder"
+      STREAM_NAME: broadcast
+    volumes:
+      - /var/container/data/:/data

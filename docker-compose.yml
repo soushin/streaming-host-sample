@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  dind_streaming_host:
+    container_name: streaming_host
+    image: docker:1.13.0-dind
+    privileged: true
+    ports:
+      - 5301:2375
+      - 1935:1935
+      - 80:80
+      - 5000:5000
+    volumes:
+      - ./video/clouds_over_the_mountain_hd_stock_video.mp4.mp4:/var/container/data/broadcast_source.mp4
